@@ -26,7 +26,7 @@ const esquemaProduct = mongoose.Schema({
 
     imagen: [
         {
-            puclic_id:{
+            public_id:{
 
                 type: String,
                 required: true
@@ -59,29 +59,24 @@ const esquemaProduct = mongoose.Schema({
 
         }, 
 
-        enum_sub_categoria:{
+        subCategoria:{
             valores:[
-                "adobe",
-                "windows",
-                "mac",
-                "linux",
-                "unix",
-                "android"
-                
+                "lic adobe",
+                "lic windows",
+                "software video",
+                "software imagen"
             ]
 
         },
 
-        enum_tipo:[
-            "almacenamiento",
-            "ssd",
-            "procesadores",
-            "Tarjeta_grafica", 
-            "Conector",
+        tipo:[
+            "almacenamiento en la nube",
+            "SSD",
+            "tarjeta grafica", 
+            "conector HDMI",
             "monitores",
-            "teclados",
-            "mouse",
-            "sonido"
+            "accesorios",
+            "audio"
             
         ]
     }, 
