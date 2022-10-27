@@ -25,7 +25,6 @@ const Home = () => {
     </div>
 
     <div className="container my-5 py-5">
-      <TitlesHome title="Nuevos Productos"/>
 
       <div className="row mb-5">
         {

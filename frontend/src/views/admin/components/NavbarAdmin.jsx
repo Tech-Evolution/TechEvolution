@@ -11,13 +11,16 @@ const NavbarAdmin = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <NavLink className="nav-link" aria-current="page" to="/" end>Home</NavLink>
+                        <NavLink className="nav-link" aria-current="page" to="/dashboard" end>Dashboard</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/products">Productos</NavLink>
+                        <NavLink className="nav-link" to="/dashboard/products">Productos</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/dashboard">Admin</NavLink>
+                        <NavLink className="nav-link" to="/dashboard">Ventas</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/dashboard">Ordenes</NavLink>
                     </li>
                 </ul>
             </div>

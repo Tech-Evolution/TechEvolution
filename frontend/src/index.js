@@ -13,6 +13,9 @@ import Products from './views/Products';
 import Dashboard from './views/admin/Dashboard';
 import ProductDetail from './views/ProductDetail';
 import ProductProvider from './context/ProductProvider';
+import ProductsAdmin from './views/admin/ProductsAdmin';
+import CreateProduct from './views/admin/CreateProduct';
+import Cart from './views/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,8 +27,11 @@ root.render(
           <Route index element={<Home />} />
           <Route path='products' element={<Products />} />
           <Route path='detail' element={<ProductDetail />} />
+          <Route path='cart' element={<Cart />} />
         </Route>
         <Route path='dashboard' element={<Dashboard />} />
+        <Route path='dashboard/products' element={<ProductsAdmin />} />
+        <Route path='products/create' element={<CreateProduct/>} />
       </Routes>
     </ProductProvider>
   </BrowserRouter> 

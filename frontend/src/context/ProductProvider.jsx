@@ -11,13 +11,34 @@ const ProductProvider = (props) => {
         setProducts(data)
     }, [])
 
-    // function detailProduct(id) {
+    // function getProduct(id) {
     //   console.log(id)
     //   setProducts(products.filter((item) => item.id === id));
     // }
+
+    // function createProduct(product) {
+    //   setProducts([
+    //     ...products,
+    //     {
+    //       id: products.length,
+    //       name: product.name,
+    //       description: product.description,
+    //       category: product.category,
+    //       price: product.price,
+    //       image: product.image
+    //     },
+    //   ]);
+    // }
+  
+    // function deleteProduct(id) {
+    //   setProducts(products.filter((product) => product.id !== id));
+    // }
+
   return (
     <ProductContext.Provider 
-      value={products}
+      value={
+        products
+      }
       >
       {props.children}
     </ProductContext.Provider>

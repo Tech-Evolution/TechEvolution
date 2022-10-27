@@ -1,15 +1,13 @@
 import { useContext } from "react"
-import CardProduct from "../components/CardProduct"
 import { ProductContext } from "../context/ProductProvider"
-
-
-
+import CardProduct from "../components/CardProduct"
 const Products = () => {
-  
+
   const products = useContext(ProductContext)
+  
   return (
     <>
-      <div className="container py-5">
+      <div className="container py-5 my-5">
         <div className="row">
           <div className="card-body mb-4 mt-5">
             <div className="input-group mb-3 mt5">
@@ -32,7 +30,7 @@ const Products = () => {
             ))
           } 
         </div>
-      </div>
+      </div> 
       
     </>
   )

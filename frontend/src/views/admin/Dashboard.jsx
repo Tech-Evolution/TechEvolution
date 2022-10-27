@@ -4,7 +4,7 @@ const Dashboard = () => {
   return (
     <>
       <NavbarAdmin />
-
+      <h1>Dashboard</h1>
     </>
   )
 }

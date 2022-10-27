@@ -17,7 +17,7 @@ const ProductDetail = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet eius aliquid? Consequatur ipsam nemo ullam similique, vel illum reprehenderit voluptatum id inventore magni, deleniti ipsa animi architecto doloremque eos!
                 </p>
                 <button className="btn btn-outline-dark">Agregar al Carrito</button>
-                <NavLink to="/" className="btn btn-dark ms-2 px-3">Ir al Carrito</NavLink>
+                <NavLink to="/cart" className="btn btn-dark ms-2 px-3">Ir al Carrito</NavLink>
             </div>
         </div>
     </div>
