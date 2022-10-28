@@ -1,24 +1,24 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose")
 
 //Modelo para los productos 
 
 const esquemaProduct = mongoose.Schema({
 
-    nombre:{
+    nombre: {
         type: String,
         required: [true, "Este campo es obligatorio por favor llenarlo"],
         trim: true,
-        maxLength:[120, "El nombre del producto tiene un maximo de 120 caracteres."]
+        maxLength: [120, "El nombre del producto tiene un maximo de 120 caracteres."]
     },
 
     precio: {
         type: Number,
-        required: [true, "Por favor ingrese el valor del producto."], 
+        required: [true, "Por favor ingrese el valor del producto."],
         maxLength: [9, "El precio de este producto no puede superar las 9 cifras."],
         default: 0.0
-    }, 
+    },
 
-    descripcion:{
+    descripcion: {
         type: String,
         required: [true, "Agregue la descripción del producto."],
     },
@@ -26,13 +26,13 @@ const esquemaProduct = mongoose.Schema({
 
     imagen: [
         {
-            public_id:{
+            public_id: {
 
                 type: String,
                 required: true
             },
 
-            url:{
+            url: {
                 type: String,
                 required: true
             }
@@ -44,23 +44,23 @@ const esquemaProduct = mongoose.Schema({
         required: [true, "Registre el stock del producto"],
         maxLength: [10, "La cantidad maxima del producto no debe ser mayor a 10 cifras"],
         default: 0
-    }, 
+    },
 
-    
-    categoria:{
+
+    categoria: {
         type: String,
-        required: [true, "Seleccione la categoría"], 
+        required: [true, "Seleccione la categoría"],
 
-        enum_categoria:{
+        enum_categoria: {
             valores: [
                 "Hardware",
                 "Software"
             ]
 
-        }, 
+        },
 
-        subCategoria:{
-            valores:[
+        subCategoria: {
+            valores: [
                 "lic adobe",
                 "lic windows",
                 "software video",
@@ -69,20 +69,20 @@ const esquemaProduct = mongoose.Schema({
 
         },
 
-        tipo:[
+        tipo: [
             "almacenamiento en la nube",
             "SSD",
-            "tarjeta grafica", 
+            "tarjeta grafica",
             "conector HDMI",
             "monitores",
             "accesorios",
             "audio"
-            
+
         ]
-    }, 
+    },
 
     //fecha en la que se compró el producto (util para la factura)
-    fechaCompra:{
+    fechaCompra: {
         type: Date,
         default: Date.now
     }
@@ -90,4 +90,4 @@ const esquemaProduct = mongoose.Schema({
 })
 
 //Exporto el modulo para poder usarlo en el controller.
-module.exports=mongoose.model("productos", esquemaProduct)
+module.exports = mongoose.model("productos", esquemaProduct)

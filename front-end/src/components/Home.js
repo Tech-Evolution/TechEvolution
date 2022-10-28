@@ -19,12 +19,14 @@ export const Home = () => {
         }
 
         dispatch(getProduct());
-        alert.success("✨💻✨")
+
     }, [dispatch])
 
 
     return (
         <Fragment>
+
+            
 
             <div class="three-dimensions-card">
 

@@ -46,7 +46,7 @@ export const reducerProduct = (state = { products: [] }, action) => {
 
 //Reductoor for detalle
 
-export const reducerDetalle = (state = { products: {} }, action) => {
+export const reducerDetalle = (state = { product: {} }, action) => {
     switch (action.type) {
         case PRODUCT_DETALLES_REQUEST:
             return {
@@ -58,7 +58,7 @@ export const reducerDetalle = (state = { products: {} }, action) => {
         case PRODUCT_DETALLES_SUCCESS:
             return {
                 loading: false,
-                producto: action.payload.productById,
+                product: action.payload
                 
             }
 
