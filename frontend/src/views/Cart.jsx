@@ -7,7 +7,6 @@ const Cart = () => {
             <div className="py-5 text-center">
                 <img className="d-block mx-auto mb-4" src="/assets/cart.jpg" alt="" width="200" height="150" />
                 <h2>Formulario de Pago</h2>
-                <p className="lead">A continuación se muestra un formulario de ejemplo construido completamente con los controles de formulario de Bootstrap. Cada grupo de formulario requerido tiene un estado de validación que se puede activar al intentar enviar el formulario sin completarlo.</p>
             </div>
 
             <div className="row g-5">

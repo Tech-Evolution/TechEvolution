@@ -1,21 +1,29 @@
-import { NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { NavLink, Link, useNavigate, useParams } from "react-router-dom"
+import { ProductContext } from "../context/ProductProvider"
 
 const ProductDetail = () => {
+    const data = useContext(ProductContext)
+
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const product = data.find((e) => e.id === Number(id));
+
   return (
     <div className="container py-5">
         <div className="row py-5">
+            <Link onClick={() => navigate(-1)}>
+                <i class="fa fa-duotone fa-arrow-left" title="Ir Atrás"></i>
+            </Link>
             <div className="col-12 col-md-12 col-lg-6">
-                <img src="/assets/apple.jpg" alt="Pc Mac All In One" height={400} width={400} />
+                <img src={product.image} alt={product.name}className="img-fluid h-100 w-100"/>
             </div>
-            <div className="col-12 col-lg-6">
-                <h4 className="text-uppercase text-black-50">Hardware</h4>
-                <h1 className="display-5">Pc Mac All In One</h1>
+            <div className="col-12 col-md-12 col-lg-6">
+                <h1 className="display-5">{product.name}</h1>
                 <h3 className="display-6 fw-bold my-4">
-                    <span>$</span> 3.000.000
+                    <span>$</span> {Intl.NumberFormat('de-DE').format(product.price)}
                 </h3>
-                <p className="lead">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eveniet eius aliquid? Consequatur ipsam nemo ullam similique, vel illum reprehenderit voluptatum id inventore magni, deleniti ipsa animi architecto doloremque eos!
-                </p>
+                <p className="lead">{product.description}</p>
                 <button className="btn btn-outline-dark">Agregar al Carrito</button>
                 <NavLink to="/cart" className="btn btn-dark ms-2 px-3">Ir al Carrito</NavLink>
             </div>

@@ -12,24 +12,24 @@ const Home = () => {
   const software = data.filter((item) => item.category === "software").slice(0,3);
 
   return (
-  <>
+  <div className="wrapper">
     <div className="card text-bg-dark border-0 mt-1">
         <img src="/assets/bg.jpg" className="card-img" alt="background" height="550px"/>
         <div className="card-img-overlay d-flex flex-column justify-content-center">
             <div className="container">
-                <h5 className="card-title display-3 fw-bolder mb-0">Lo último en tecnología al alcance de tus sueños.</h5>
-                <p className="card-text lead fs-2 mt-3">EXPLORA LAS NUEVAS TENDENCIAS
+                <h5 className="card-title display-3 fw-bolder mb-0">Lo último en tecnología al alcance de tus necesidades.</h5>
+                <p className="card-text lead fs-2 mt-3">EXPLORA LAS NUEVAS TENDENCIAS.
                 </p>
             </div>       
         </div>
     </div>
 
     <div className="container my-5 py-5">
-
+    <TitlesHome title="Nuevas Tendencias"/>
       <div className="row mb-5">
         {
           products.map(item => (
-            <CardProduct key={item.id} product={item} />
+              <CardProduct key={item.id} product={item} />
           ))
         }
       </div>
@@ -53,7 +53,7 @@ const Home = () => {
       </div>
 
     </div>
-  </>
+  </div>
   )
 }
 

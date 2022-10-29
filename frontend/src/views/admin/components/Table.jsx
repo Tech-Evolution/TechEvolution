@@ -45,8 +45,10 @@ const Table = () => {
                                             <td>{item.price}</td>
                                             <td>
                                                 <div className="d-flex justify-content-center">
-                                                    <Link to="/detail" className="btn btn-info btn-sm ms-2">ver</Link>
-                                                    <Link to="/detail" className="btn btn-warning btn-sm ms-2">editar</Link>
+                                                    <Link 
+                                                        key={item.id} to={`/products/detail/${item.id}`}
+                                                        className="btn btn-info btn-sm ms-2">ver
+                                                    </Link>
                                                     <Link to="/detail" className="btn btn-danger btn-sm ms-2">Eliminar</Link>
                                                 </div>
                                             </td>

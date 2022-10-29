@@ -2,7 +2,7 @@ import { NavLink, Link } from "react-router-dom"
 
 const NavbarAdmin = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light fixed-top  navbar-white py-3 shadow-sm mb-5">
+    <nav className="navbar navbar-expand-lg bg-light fixed-top navbar-white py-3 shadow-sm mb-5">
         <div className="container">
             <Link className="navbar-brand fw-bold fs-4" to="/">TechEvolution</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,7 @@ const NavbarAdmin = () => {
             </div>
         </div>
     </nav>
+
   )
 }
 
