@@ -24,3 +24,9 @@ export const RegisterValidator = [
     ], 
     validationResultExpress,
 ]
+
+export const loginValidator = [
+    body('email', "El formato no es correcto").trim().isEmail().normalizeEmail(),
+    body('password', "La contraseña debe contener mínimo 8 caracteres").trim().isLength({min: 8}),
+    validationResultExpress
+]
