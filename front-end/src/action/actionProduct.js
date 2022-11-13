@@ -7,14 +7,14 @@ import {
     PRODUCT_DETALLES_REQUEST,
     PRODUCT_DETALLES_SUCCESS,
     PRODUCT_DETALLES_FAIL,
-
     CLEAR_ERRORS
 } from '../constantes/constProduct';
 
-export const getProduct = () => async (dispatch) => {
+export const getProduct = (currentPage =1) => async (dispatch) => {
     try {
         dispatch({ type: ALL_PRODUCTS_REQUEST })
 
+        
         const { data } = await axios.get('api/productos')
 
         dispatch({

@@ -81,6 +81,12 @@ const esquemaProduct = mongoose.Schema({
         ]
     },
 
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
+    },
+
     //fecha en la que se compró el producto (util para la factura)
     fechaCompra: {
         type: Date,

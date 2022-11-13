@@ -1,15 +1,20 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import MetaData from './diseños/MetaData'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProduct } from '../action/actionProduct'
-import { Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
+import Pagination from 'react-js-pagination'
+//import Slider from "rc-slider"
+import 'rc-slider/assets/index.css'
 
 export const Home = () => {
 
+    const params = useParams();
+    
+    const [currentPage, setCurrentPage] = useState(1)
 
-
-    const { loading, productos, error } = useSelector(state => state.products)
+    const { loading, productos, error, resPerPage, productsCount } = useSelector(state => state.products)
     const alert = useAlert();
 
     const dispatch = useDispatch();
@@ -18,15 +23,19 @@ export const Home = () => {
             return alert.error(error)
         }
 
-        dispatch(getProduct());
+        dispatch(getProduct(currentPage));
+    }, [dispatch, alert, error, currentPage])
 
-    }, [dispatch])
-
+    function setCurrentPageNo(pageNumber) {
+        setCurrentPage(pageNumber)
+    }
 
     return (
         <Fragment>
 
-            
+            <br></br>
+            <br></br>
+            <br></br>
 
             <div class="three-dimensions-card">
 
@@ -39,7 +48,6 @@ export const Home = () => {
 
                             <br></br>
                             <br></br>
-
 
                             <h2 id='new_productos'>Nuevos productos</h2>
 
@@ -66,16 +74,26 @@ export const Home = () => {
                             </section>
                         </div>
 
+                        <div className='d-flex justify-content-center mt-5'>
+                            <Pagination
+                                activePage={currentPage}
+                                itemsCountPerPage={resPerPage}
+                                totalItemsCount={productsCount}
+                                onChange={setCurrentPageNo}
+                                nextPageText={'Siguiente'}
+                                prevPageText={'Anterior'}
+                                firstPageText={'Primera'}
+                                lastPageText={'Ultima'}
+                                itemClass='page-item'
+                                linkClass='page-link'
+                            />
+                        </div>
+
 
                     </Fragment>
                 )}
 
             </div>
-
-
-
-
-
 
         </Fragment>
     )

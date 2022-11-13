@@ -1,0 +1,36 @@
+{
+    "item": [
+        {
+            "id": "635469bb0e29139d086f3fb9",
+            "nombre": "Licencia de windows",
+            "precio": 15000,
+            "imagen": "./images/software/windows.png",
+            "inventario": 98,
+            "__v": 0
+        },
+        {
+            "id": "6354d6a76cc2e8e8c5488807",
+            "nombre": "Monitores",
+            "precio": 20000,
+            "imagen": "./images/hardware/monitores.png",
+            "inventario": 158,
+            "__v": 0
+        },
+        {
+            "id": "6354d7606cc2e8e8c548880e",
+            "nombre": "Software de video",
+            "precio": 74000,
+            "imagen": "./images/software/softVideo.png",
+            "inventario": 208,
+            "__v": 0
+        },
+        {
+            "_id": "635b29546efce29d02445ea2",
+            "nombre": "SSD",
+            "precio": 740600,
+            "imagen": "./images/hardware/ssd.png",
+            "inventario": 2608,
+            "__v": 0
+        }
+    ]
+}

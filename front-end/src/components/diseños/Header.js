@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import "../../App.css"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 
 const Header = () => {
@@ -10,43 +10,49 @@ const Header = () => {
             <div>
                 <header class="sticky-header__header">
 
-                    <nav className="navbar row">
-                        <div className='col-12 col-md-3'>
-                            <div className='navbar-brand'>
-                                <img src="./images/logo.png" width="140" height="140" alt='Tech Evolution'></img>
+                    <nav className="navbar navbar-expand-lg bg-light fixed-top  navbar-white py-3 shadow-sm mb-5">
+                        <div className="container">
+                            <Link className="navbar-brand fw-bold fs-4" to="/">TechEvolution</Link>
+                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" aria-current="page" to="/" end>Home</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/products">Productos</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/contact">Contacto</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/Sidebar">Admin</NavLink>
 
-                            </div>
-                        </div>
+                                    </li>
+                                </ul>
 
-                        <div className='col-12 col-md-6 mt-2 mt-md-0'>
-                            <div className="input-group">
-                                <input
-                                    type="text"
-                                    id="search_field"
-                                    class="form-control"
-                                    placeholder='¿Que producto estas buscando?'></input>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                <div class="input-group-append">
-                                    <button id="search-btn" class="btn">
-                                        <i class="fa fa-search text-white" aria-hidden="true">Buscar</i>
-                                    </button>
+                                <div className="buttons">
+                                    <Link to="login" className="btn btn-outline-dark">
+                                        <i className="fa fa-sign-in me-1"></i>
+                                        Login
+                                    </Link>
+                                    <Link to="/register" className="btn btn-outline-dark ms-2">
+                                        <i className="fa fa-user-plus me-1"></i>
+                                        Registro
+                                    </Link>
+
+                                    <Link to="/carrito" className="btn btn-outline-dark ms-2">
+                                        <i className="fa fa-shopping-cart me-1"></i>
+                                        Car (0)
+                                    </Link>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-                            <div className="ml-4 dropdown d-inline">
-                                <Link to="#!" className="btn dropdown-toggle text-white mr-4" type="button" id="dropDownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span>Panel de Control</span></Link><div className='dropdown-menu' aria-labelledby='dropDownMenu'>
-                                    
-                                    <Link className="dropdown-item" to="/">Login</Link>
-                                    <Link className="dropdown-item" to="/">Iniciar sección</Link>
-                                    <Link className="dropdown-item" to="/">Cerrar sección</Link>
-                                    <Link className="dropdown-item" to="/">Adm. Productos</Link>
-                                </div>
-                            </div>
-                            <i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i><span className="ml-1" id="cart_count">2</span>
-                        </div>
 
+                            </div>
+                        </div>
                     </nav>
                 </header>
 

@@ -1,5 +1,6 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const producto = require("../Models/product");
+const APIFeatures = require("../utils/apiFeatures");
 const ErrorHandler = require("../utils/errorHandler");
 const fetch = (url) => import('node-fetch').then(({ default: fetch }) => fetch(url)); //Usurpación del require
 
@@ -11,8 +12,6 @@ exports.getProduct = catchAsyncErrors(async (req, res, next) => {
     if (!productos) {
         return next(new ErrorHandler("Informacion no encontrada", 404))
     }
-
-
 
     res.status(200).json({
         success: true,
@@ -38,8 +37,8 @@ exports.getProductById = catchAsyncErrors(async (req, res, next) => {
 
 
 //Crear nuevo producto /api/productos
-
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
+    req.body.user = req.user.id;
     const newProduct = await producto.create(req.body);
 
     res.status(201).json({
@@ -72,7 +71,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 })
 
 //Eliminar un producto por el id
-
 exports.deleteProductById = catchAsyncErrors(async (req, res, next) => {
     const deleteProducto = await producto.findById(req.params.id)
     if (!deleteProducto) { //Para ver si el producto es existente
@@ -81,7 +79,7 @@ exports.deleteProductById = catchAsyncErrors(async (req, res, next) => {
     }
 
     await deleteProducto.remove(); //Se elimina el producto y se le informa con un mensaje
-    req.status(200).json({
+    res.status(200).json({
         success: true,
         mensaje: 'El producto se eliminado'
     })
