@@ -1,8 +1,8 @@
-import React , {Fragment, useState, useEffect} from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import {useNavigate} from "react-router-dom"
-import {register, clearErrors} from "../../action/userActions"
+import { useNavigate } from "react-router-dom"
+import { register, clearErrors } from "../../action/userActions"
 import MetaData from '../diseños/MetaData'
 
 

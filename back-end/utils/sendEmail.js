@@ -5,8 +5,8 @@ const sendEmail = async options =>{
         host: "smtp.mailtrap.io",
         port: 2525,
         auth: {
-          user: "ozzyta@outlook.com",
-          pass: "0eadd9e2c2dad4"
+          user: "tech.evolution.tic@gmail.com",
+          pass: "t3ch.3v0lut10n"
         }
       });
     const mensaje={

@@ -1,10 +1,10 @@
-const express = require("express");
-const { registroUsuario,
-    loginUser,
-    logOut,
-    forgotPassword,
-    resetPassword,
-    getUserProfile,
+const express=require("express");
+const { registroUsuario, 
+    loginUser, 
+    logOut, 
+    forgotPassword, 
+    resetPassword, 
+    getUserProfile, 
     updatePassword,
     updateProfile,
     getAllUsers,
@@ -13,7 +13,7 @@ const { registroUsuario,
     deleteUser
 } = require("../controlador/authController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
-const router = express.Router();
+const router= express.Router();
 
 router.route('/usuario/registro').post(registroUsuario)
 router.route('/login').post(loginUser)
@@ -30,4 +30,4 @@ router.route('/admin/user/:id').get(isAuthenticatedUser, authorizeRoles("admin")
 router.route('/admin/updateUser/:id').put(isAuthenticatedUser, authorizeRoles("admin"), updateUser)
 router.route("/admin/deleteUser/:id").delete(isAuthenticatedUser, authorizeRoles("admin"), deleteUser)
 
-module.exports = router
+module.exports= router

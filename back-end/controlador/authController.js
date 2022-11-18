@@ -5,10 +5,11 @@ const jwt = require("jsonwebtoken")
 const crypto = require("crypto")
 const tokenEnviado = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
+const cloudinary= require("cloudinary")
 
-/*exports.registrarUser = catchAsyncErrors(async (req, res, next) => {
+//Registrar un nuevo usuario /api/usuario/registro
+/*exports.registroUsuario = catchAsyncErrors(async (req, res, next) => {
     const { nombre, email, password } = req.body;
-
     const user = await User.create({
         nombre,
         password,
@@ -17,41 +18,41 @@ const sendEmail = require("../utils/sendEmail");
             public_id: "qwertyuikjhgf34",
             url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA5qWv8yaPOA8Brc8HY00a8hXHt-udCq0n2g&usqp=CAU"
         }
-
     })
-
     const token = user.getJwtToken();
-
-
     res.status(201).json({
         success: true,
         token,
         user
-
     })
-})
-*/
+})*/
+
 
 //Registrar un nuevo usuario /api/usuario/registro
 exports.registroUsuario = catchAsyncErrors(async (req, res, next) => {
     const { nombre, email, password } = req.body;
 
-    const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+   /* const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
         folder: "avatars",
         width: 240,
         crop: "scale"
     })
-
+*/
     const user = await User.create({
         nombre,
         email,
         password,
         avatar: {
-            public_id: result.public_id,
-            url: result.secure_url
+            public_id: "qwertyuikjhgf34",
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA5qWv8yaPOA8Brc8HY00a8hXHt-udCq0n2g&usqp=CAU"
         }
     })
-    tokenEnviado(user, 201, res)
+    const token = user.getJwtToken();
+    res.status(201).json({
+        success: true,
+        token,
+        user
+    })
 })
 
 
